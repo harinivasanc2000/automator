@@ -1,5 +1,5 @@
 import os 
-import shutil           # shutil was move intuitive to understand compared to the otehr 2 packages
+import shutil           # shutil was more intuitive to understand compared to the otehr 2 packages
 
 
 
