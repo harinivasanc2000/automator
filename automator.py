@@ -1,9 +1,8 @@
 import os 
 import shutil           # shutil was more intuitive to understand compared to the otehr 2 packages
-
-
-
-
+import schedule         # i wanted to automate this script every weekend or so to clear up my downloads
+import time
+import datetime
 
 
 
@@ -57,7 +56,7 @@ def video_class():
 
 def document_class():
     document_folder = os.path.join(source_folder, 'Automated/Documents')
-    document_extensions = ('.pdf', '.txt', '.word', '.rtf', '.docx', '.doc', '.xlsx', '.pptx', '.pages', '.numbers', '.key', '.csv', '.ini', '.iso', '.xml', '.html', '.json', '.cfg', 'epub', 'exml', 'ics', '.md','.odt','.tex','eml')
+    document_extensions = ('.pdf', '.txt', '.word', '.rtf', '.docx', '.doc', '.xlsx', '.pptx', '.pages', '.numbers', '.key', '.csv', '.ini', '.iso', '.xml', '.html', '.json', '.cfg', '.epub', '.exml', '.ics', '.md','.odt','.tex','.eml','.tsv')
     handle_file_move('document', source_folder, document_folder, document_extensions)
     
 
@@ -82,17 +81,23 @@ def audio_class():
     audio_extensions = ('.mp3', '.wav', '.flac', '.aac', '.m4a', '.ogg', '.wma', '.aiff', '.alac', '.dsd')
     handle_file_move('audio', source_folder, audio_folder, audio_extensions)
     
+def automate():
+    image_class()
+    (video_class())
+    (document_class())
+    (code_class())
+    (compressed_class())
+    (application_class())
+    (audio_class())
+    
 
+schedule.every().monday.do((automate))
+schedule.every().day.at("15:23").do(automate)       #the script need to be manually run every day or so that it can initialize 
 
+while True:             # this makes sure that the schduel loop waits every 60 seconds until teh time comes and runs, so the loop is necedsary
+    schedule.run_pending()
+    time.sleep(10)
 
-
-print(image_class())
-print(video_class())
-print(document_class())
-print(code_class())
-print(compressed_class())
-print(application_class())
-print(audio_class())
 
 
 
