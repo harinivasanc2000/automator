@@ -97,7 +97,7 @@ schedule.every().monday.do(automate)
 
 while True:             # this makes sure that the schduel loop waits every 60 seconds until teh time comes and runs, so the loop is necedsary
     schedule.run_pending()
-    time.sleep(30)
+    time.sleep(60)
 
 
 
