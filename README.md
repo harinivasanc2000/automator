@@ -34,6 +34,12 @@ pip install schedule
 2. Modify the `source_folder` path in the script to point to your **Downloads** folder.
 3. Run the script, and it will automatically organize your files on the set schedule (e.g., every Monday).
 
+## Future Ideas
+- Implement very appealing GUIs and choose the directly from menus by the user
+- Auto Rescheduler so that the script runs automatically in the background based on the chosen frequency.
+- My main idea was to read the contents of the document file i.e seperate subjects based on the wordings and images of the pdf, which is Machine Learning and will require more iteration.
+- Please feel free to drop ideas, I'm more tham happy to hear some suggestions.
+
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
