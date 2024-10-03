@@ -83,20 +83,21 @@ def audio_class():
     
 def automate():
     image_class()
-    (video_class())
-    (document_class())
-    (code_class())
-    (compressed_class())
-    (application_class())
-    (audio_class())
+    video_class()
+    document_class()
+    code_class()
+    compressed_class()
+    application_class()
+    audio_class()
     
 
-schedule.every().monday.do((automate))
-schedule.every().day.at("15:23").do(automate)       #the script need to be manually run every day or so that it can initialize 
+
+schedule.every().monday.do(automate)
+#schedule.every().day.at('15:45').do(automate)       #the script need to be manually run every day or so that it can initialize 
 
 while True:             # this makes sure that the schduel loop waits every 60 seconds until teh time comes and runs, so the loop is necedsary
     schedule.run_pending()
-    time.sleep(10)
+    time.sleep(30)
 
 
 
