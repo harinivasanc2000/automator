@@ -1,6 +1,6 @@
 import os 
 import shutil           # shutil was more intuitive to understand compared to the otehr 2 packages
-import schedule         # i wanted to automate this script every weekend or so to clear up my downloads
+#import schedule         # i wanted to automate this script every weekend or so to clear up my downloads
 import time
 import datetime
 
